@@ -20,7 +20,7 @@ EPC-Rec consists of three key components:
 
    This module captures learner-course matching patterns across different course popularity groups. By introducing popularity-aware attention, EPC-Rec reduces excessive reliance on highly popular courses and improves representation learning for long-tail courses.
 
-3. **Calibrated Objective**
+3. **Calibrated Bias Objective**
 
    This objective regularizes the recommendation process by encouraging a better balance between ranking accuracy and popularity bias mitigation. It helps improve long-tail exposure while maintaining competitive recommendation performance.
 
@@ -50,10 +50,17 @@ where `ARP@K` measures the average popularity of recommended courses, `HRcold@K`
 
 ```text
 EPC-Rec/
-├── data/                 # Dataset files
-├── models/               # Model implementation
-├── utils/                # Utility functions
-├── train.py              # Training script
-├── evaluate.py           # Evaluation script
-├── config.py             # Hyperparameter configuration
-└── README.md             # Project documentation
+├── main.py                    # Entry point for model training and evaluation
+├── EPC_Rec.py                 # Implementation of the proposed EPC-Rec model
+├── LightGCN.py                # LightGCN backbone used for collaborative representation learning
+├── CourseDataset.py           # Dataset class for course recommendation data
+├── load_data.py               # Data loading and preprocessing utilities
+├── prepare_data.py            # Data preparation script
+├── Evaluation.py              # Evaluation functions for recommendation performance
+├── Utils.py                   # General utility functions
+├── helper.py                  # Helper functions used across modules
+├── log_helper.py              # Logging utilities
+├── cluster.py                 # Clustering-related functions or popularity group construction
+├── approx_ndcg_loss.py        # ApproxNDCG loss implementation
+├── BarlowTwinsLoss.py         # Barlow Twins contrastive loss implementation
+└── BPR_Loss.py                # Bayesian Personalized Ranking loss implementation
