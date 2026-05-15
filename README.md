@@ -33,18 +33,6 @@ EPC-Rec consists of three key components:
 - Support for top-K evaluation
 - Evaluation with accuracy and long-tail exposure metrics
 
-## Evaluation Metrics
-
-The model can be evaluated using both accuracy-oriented and popularity-aware metrics, including:
-
-- `Recall@K`
-- `NDCG@K`
-- `MRR@K`
-- `ARP@K`
-- `HRcold@K`
-- `LTE@K`
-
-where `ARP@K` measures the average popularity of recommended courses, `HRcold@K` evaluates the hit ratio on cold courses, and `LTE@K` measures long-tail exposure in the recommendation list.
 
 ## Project Structure
 
